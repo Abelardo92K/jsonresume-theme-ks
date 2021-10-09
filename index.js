@@ -47,8 +47,38 @@ handlebars.registerHelper({
   formatYear: (date) => moment(date).format('YYYY'),
   console: (object) => JSON.stringify(object),
 
-  technologiesMustache: () => "{{#technologies}}{{name}} |{{/technologies}}",
-  certificationsMustache: () => "{{#certifications}}<section class='item'>{{#specialization}}<h4>{{specialization}}</h4>{{/specialization}}{{#institution}}<h4>{{institution}}</h4>{{/institution}}<h4>({{#startDate}}<span class='startDate'>{{startDate}}</span>{{/startDate}}{{#endDate}}<span class='endDate'> to {{endDate}}</span>{{/endDate}}{{#releaseDate}}{{releaseDate}}{{/releaseDate}})</h4></section>{{/certifications}}",
+  technologiesMustache: () => 
+  `{{#technologies.length}}
+    <div class="container technologies-container">
+      <div class="title"><h3>Technologies</h3></div>
+      <section>
+        <h4>
+          {{#technologies}}{{name}} |{{/technologies}}
+        </h4>
+      </section>
+    </div>
+  {{/technologies.length}}`,
+  certificationsMustache: () => `
+  {{#certifications.length}}
+  <div class="container certification-container">
+    <div class="title"><h3>Certifications</h3></div>
+    {{#certifications}}
+      <section class='item'>
+        {{#specialization}}
+          <h4>{{specialization}}</h4>
+        {{/specialization}}
+        {{#institution}}
+          <h4>{{institution}}</h4>
+        {{/institution}}
+        <h4>
+          ({{#startDate}}<span class='startDate'>{{startDate}}</span>{{/startDate}}
+          {{#endDate}}<span class='endDate'> to {{endDate}}</span>{{/endDate}}
+          {{#releaseDate}}{{releaseDate}}{{/releaseDate}})
+        </h4>
+      </section>
+    {{/certifications}}
+  </div>
+  {{#certifications.length}}`,
 
   isArray: (element, options) => Array.isArray(element) ? options.fn(element) : options.inverse(element),
   isDev: (label, options) => ["develop", "programmer"].some(term =>  label.toLowerCase().includes(term)) ? options.fn(this) : options.inverse(this),
