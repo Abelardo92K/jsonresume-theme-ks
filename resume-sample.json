@@ -72,40 +72,6 @@
       "technologies": [
         "Javascript", "React JS", "Firebase"
       ]
-    },
-    {
-      "position": "CEO/President",
-      "company": "Pied Piper",
-      "client": "Pedro Gomez",
-      "city": "Mérida",
-      "startDate": "2014-04-13",
-      "endDate": "2015-04-13",
-      "projectName": "Syncron",
-      "summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
-      "skills": [
-        "Web development",
-        "Communication with team"
-      ],
-      "technologies": [
-        "Javascript", "React JS", "Firebase"
-      ]
-    },
-    {
-      "position": "CEO/President",
-      "company": "Pied Piper",
-      "client": "Pedro Gomez",
-      "city": "Mérida",
-      "startDate": "2014-04-13",
-      "endDate": "2015-04-13",
-      "projectName": "Syncron",
-      "summary": "Pied Piper is a multi-platform technology based on a proprietary universal compression algorithm that has consistently fielded high Weisman Scores™ that are not merely competitive, but approach the theoretical limit of lossless compression.",
-      "skills": [
-        "Web development",
-        "Communication with team"
-      ],
-      "technologies": [
-        "Javascript", "React JS", "Firebase"
-      ]
     }
   ],
   "education": [

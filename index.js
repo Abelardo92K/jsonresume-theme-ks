@@ -78,7 +78,7 @@ handlebars.registerHelper({
       </section>
     {{/certifications}}
   </div>
-  {{#certifications.length}}`,
+  {{/certifications.length}}`,
 
   isArray: (element, options) => Array.isArray(element) ? options.fn(element) : options.inverse(element),
   isDev: (label, options) => ["develop", "programmer"].some(term =>  label.toLowerCase().includes(term)) ? options.fn(this) : options.inverse(this),
