@@ -108,6 +108,13 @@ function render(resume) {
   });
 }
 
+const returnHTML = () => {
+  const dir = __dirname + '/public';
+  const html = fs.readFileSync(dir + '/index.html', 'utf-8')
+  return html;
+}
+
 module.exports = {
-  render: render
+  render: render,
+  html: returnHTML,
 };
