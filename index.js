@@ -53,7 +53,7 @@ handlebars.registerHelper({
       <div class="title"><h3>Technologies</h3></div>
       <section>
         <h4>
-          {{#technologies}}{{name}} |{{/technologies}}
+          {{#technologies}}{{name}}{{^last}} | {{/last}}{{/technologies}}
         </h4>
       </section>
     </div>
@@ -71,9 +71,8 @@ handlebars.registerHelper({
           <h4>{{institution}}</h4>
         {{/institution}}
         <h4>
-          ({{#startDate}}<span class='startDate'>{{startDate}}</span>{{/startDate}}
-          {{#endDate}}<span class='endDate'> to {{endDate}}</span>{{/endDate}}
-          {{#releaseDate}}{{releaseDate}}{{/releaseDate}})
+          {{#startDate}}(<span class='startDate'>{{startDate}}</span>{{/startDate}}
+          {{#endDate}}<span class='endDate'> to {{endDate}}</span>){{/endDate}}
         </h4>
       </section>
     {{/certifications}}

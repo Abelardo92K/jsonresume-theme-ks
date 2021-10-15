@@ -216,7 +216,7 @@ body {
   flex-direction: column;
   font-size: 14px;
   margin: 0;
-  min-height: 792px;
+  min-height: 60em;
   position: relative;
   width: 100%; }
   .page:after {
@@ -306,6 +306,8 @@ body {
   overflow: hidden;
   width: auto; }
   .right-column .summary-position {
+    font-size: 1.1em;
+    font-weight: bold;
     margin-top: 5px; }
 
 .item {
@@ -392,14 +394,14 @@ body {
     <div class="resume-content">
       <aside class="left-column">
         <div class="left-column-padding">
-              {{#education.length}}<div class='container education-container'><div class='title'><h3>Education</h3></div>{{#education}}<section class='item'>{{#studyType}}<h4>{{studyType}}</h4>{{/studyType}}{{#institution}}<h4>{{institution}}</h4>{{/institution}}<h4>({{#startDate}}<span class='startDate'>{{startDate}}</span>{{/startDate}}{{#endDate}}<span class='endDate'> - {{endDate}}</span>{{/endDate}}{{#releaseDate}}{{releaseDate}}{{/releaseDate}})</h4></section>{{/education}}{{/education.length}}
+              {{#education.length}}<div class='container education-container'><div class='title'><h3>Education</h3></div>{{#education}}<section class='item'>{{#studyType}}<h4>{{studyType}}</h4>{{/studyType}}{{#institution}}<h4>{{institution}}</h4>{{/institution}}<h4>{{#startDate}}<span class='startDate'>({{startDate}}</span>{{/startDate}}{{#endDate}}<span class='endDate'>{{#inProgress}} - Present {{/inProgress}}{{^inProgress}}{{#endDate}} - {{endDate}}{{/endDate}}{{/inProgress}})</span></h4></section>{{/education}}{{/education.length}}
           
               {{#technologies.length}}
               <div class="container technologies-container">
                 <div class="title"><h3>Technologies</h3></div>
                 <section>
                   <h4>
-                    {{#technologies}}{{name}} |{{/technologies}}
+                    {{#technologies}}{{name}}{{^last}} | {{/last}}{{/technologies}}
                   </h4>
                 </section>
               </div>
@@ -417,9 +419,9 @@ body {
                     <h4>{{institution}}</h4>
                   {{/institution}}
                   <h4>
-                    ({{#startDate}}<span class='startDate'>{{startDate}}</span>{{/startDate}}
-                    {{#endDate}}<span class='endDate'> to {{endDate}}</span>{{/endDate}}
-                    {{#releaseDate}}{{releaseDate}}{{/releaseDate}})
+                    {{#startDate}}(<span class='startDate'>{{startDate}}</span>{{/startDate}}
+                    {{#endDate}}<span class='endDate'> to {{endDate}}</span>){{/endDate}}
+                    
                   </h4>
                 </section>
               {{/certifications}}
@@ -433,7 +435,7 @@ body {
       <div class="right-column">
           {{#basics.summary}}<div class='summary-container'><div class='title'><h3>Professional Summary</h3></div><p class='summary'>{{basics.summary}}</p></div>{{/basics.summary}}
         
-            {{#work.length}}<div class='container work-container'><div class='title'><h3>Professional History</h3></div>{{#work}}<h4 class='summary-position'>{{position}}</h4><h4>{{company}}</h4><h4>{{projectName}}</h4><h4>{{client}}</h4><h4>{{city}}.{{#startDate}}<span class='startDate'>{{startDate}}</span>{{/startDate}}{{#endDate}}<span class='endDate'> to {{endDate}}</span>{{/endDate}}</h4>{{#skills}}{{.}} |{{/skills}}{{#technologies}}{{.}} |{{/technologies}}{{/work}}</div>{{/work.length}}
+            {{#work.length}}<div class='container work-container'><div class='title'><h3>Professional History</h3></div>{{#work}}<h4 class='summary-position'>{{position}}</h4><h4>{{company}}</h4><h4>{{projectName}}</h4><h4>{{client}}</h4><h4>{{#city}}{{city}}. {{/city}}{{#startDate}}<span class='startDate'>{{startDate}}</span>{{/startDate}}<span class='endDate'> {{#inProgress}} - Present {{/inProgress}}{{^inProgress}}{{#endDate}} - {{endDate}}{{/endDate}}{{/inProgress}}</span></h4>{{#skillsPreview}}{{name}}{{^last}} | {{/last}}{{/skillsPreview}}{{#technologiesPreview}}{{name}}{{^last}} | {{/last}}{{/technologiesPreview}}{{/work}}</div>{{/work.length}}
       </div>
     </div>
     <div class="resume-footer  background-employee ">
