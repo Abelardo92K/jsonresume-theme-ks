@@ -194,8 +194,13 @@ body {
   display: table;
   clear: both; }
 
+.flex, .profile-pic, .page, .page .resume-header .background-header .profile-header, .page .resume-content, .page .resume-footer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
 .profile-pic {
-  display: flex;
   height: 100%;
   position: relative;
   text-align: center;
@@ -212,7 +217,6 @@ body {
 /* Layouts */
 .page {
   background: white;
-  display: flex;
   flex-direction: column;
   font-size: 14px;
   margin: 0;
@@ -256,7 +260,6 @@ body {
         background: #1e326b; }
       .page .resume-header .background-header .profile-header {
         color: white;
-        display: flex;
         flex-direction: column;
         height: 100%;
         position: relative;
@@ -273,11 +276,9 @@ body {
         .page .resume-header .background-header .profile-header span {
           font-size: 1em; }
   .page .resume-content {
-    display: flex;
     flex-grow: 1; }
   .page .resume-footer {
     color: white;
-    display: flex;
     padding-top: 1em;
     padding-bottom: 1em;
     text-align: center; }
